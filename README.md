@@ -10,8 +10,8 @@
 ### Core
 
 - **React** - Biblioteca para construir a interface
-- **JavaScript (JSX)** - Linguagem de Programação
-- **CSS** - Linguagem de Estilos
+- **TypeScript (TSX)** - Linguagem de Programação
+- **CSS Modules** - Estilos isolados por componente, com variáveis globais do Style Guide em `style.css`
 
 ### Utilitários
 
@@ -24,7 +24,7 @@
 ```bash
 npm install     # instala as dependências
 npm run dev     # servidor de desenvolvimento
-npm run build   # gera a pasta dist/
+npm run build   # checa os tipos (tsc) e gera a pasta dist/
 npm run preview # visualiza o build
 npm run lint    # verifica o código com ESLint
 ```
@@ -63,13 +63,15 @@ theka-library
 │   ├── hooks/             # Hooks personalizados (useAuth, useLivros)
 │   ├── pages/             # Páginas (telas) do site
 │   ├── services/          # Comunicação com o back-end (fetch/axios)
-│   ├── App.jsx            # Componente principal da aplicação
-│   ├── App.css            # Estilos do componente principal
-│   ├── main.jsx           # Ponto de entrada do React
-│   └── style.css          # Estilos globais
-├── index.html             # Página HTML base (contém a div #root)
+│   ├── App.tsx            # Componente principal da aplicação
+│   ├── main.tsx           # Ponto de entrada do React
+│   └── style.css          # Estilos globais (variáveis do Style Guide)
+├── index.html             # Página HTML base (contém a div #root e carrega as fontes)
 ├── eslint.config.js       # Configuração do ESLint
-├── vite.config.js         # Configuração do Vite
+├── tsconfig.json          # Configuração base do TypeScript (referencia os dois abaixo)
+├── tsconfig.app.json      # TypeScript do código da aplicação (src/)
+├── tsconfig.node.json     # TypeScript dos arquivos de configuração (vite.config.ts)
+├── vite.config.ts         # Configuração do Vite
 ├── .gitignore             # Arquivos ignorados pelo Git
 ├── package.json           # Dependências e scripts
 ├── package-lock.json      # Versões exatas das dependências instaladas
