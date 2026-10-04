@@ -1,0 +1,49 @@
+.baseAuthPageContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 100vh;
+    background-color: var(--orange-500);
+}
+
+.illustrationContainer {
+    display: flex;
+    flex: 0 0 60%;
+    justify-content: flex-end;
+    padding: var(--space-4);
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.mascote {
+    height: max(68vh, 40vw);
+    width: auto;
+    flex-shrink: 0;
+    margin-bottom: 5.5vh;
+}
+
+.logo {
+    position: absolute;
+    left: 5.5vw;
+    bottom: 4vh;
+    width: clamp(140px, 15vw, 240px);
+}
+
+.formContainer {
+    align-items: center;
+    display: flex;
+    flex-grow: 1;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-16);
+    background-color: white;
+    border-top-left-radius: var(--radius-lg);
+    border-bottom-left-radius: var(--radius-lg);
+}
+
+.formContent {
+    width: 100%;
+    max-width: 30rem;
+}
