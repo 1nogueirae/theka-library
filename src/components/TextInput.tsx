@@ -21,7 +21,7 @@ function TextInput({
     type = 'text'
 }: TextInputProps) {
     return (
-        <div>
+        <div className={TextInputStyles.field}>
             {label && <label htmlFor={id} className={TextInputStyles.label}>{label}</label>}
             <div className={TextInputStyles.textInputContainer} >
                 <input
