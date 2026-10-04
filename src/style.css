@@ -94,6 +94,7 @@
 
 body {
     font: var(--text-body);
+    margin: 0;
 }
 
 input, button, textarea, select {
