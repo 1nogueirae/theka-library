@@ -1,0 +1,113 @@
+:root {
+
+    /* ----- Typography ----- */
+
+    /* --- Headers --- */
+    --font-family-header: 'DM Sans', sans-serif;
+    --letter-spacing-header: -0.02em;
+
+    /* Header 1 */
+    --font-style-h1: 700;
+    --font-size-h1: 64px;
+    --line-height-h1: 60px;
+
+    /* Header 2 */
+    --font-style-h2: 700;
+    --font-size-h2: 40px;
+    --line-height-h2: 40px;
+
+    /* Header 3 */
+    --font-style-h3: 700;
+    --font-size-h3: 32px;
+    --line-height-h3: normal;
+
+    /* Header 4 */
+    --font-style-h4: 700;
+    --font-size-h4: 20px;
+    --line-height-h4: normal;
+
+    /* --- General texts --- */
+    --font-family-text: 'Inter', sans-serif;
+    
+    /* Subtitle */
+    --font-style-subtitle: 300;
+    --font-size-subtitle: 24px;
+    --line-height-subtitle: normal;
+
+    /* Body 700 */
+    --font-style-body-700: 600;
+    --font-size-body-700: 18px;
+    --line-height-body-700: 140%;
+
+    /* Body */
+    --font-style-body: 300;
+    --font-size-body: 14px;
+    --line-height-body: 140%;
+
+    /* Pre Title */
+    --font-style-pre-title: 400;
+    --font-size-pre-title: 10px;
+    --line-height-pre-title: normal;
+
+    /* Link Text */
+    --font-style-link-text: 600;
+    --font-size-link-text: 14px;
+    --line-height-link-text: normal;
+
+    /* Bottom text */
+    --font-style-bottom-text: 800;
+    --font-size-bottom-text: 16px;
+    --line-height-bottom-text: normal;
+
+    /* Smaller Text */
+    --font-style-smaller-text: 300;
+    --font-size-smaller-text: 14px;
+    --line-height-smaller-text: 140%;    
+
+    /* ----- Colors ----- */
+
+    /* Grey Variants */
+    --grey-700: #1b1b1b;
+    --grey-600: #393939;
+    --grey-500: #5a5a5a;
+    --grey-400: #7e7e7d;
+    --grey-300: #a3a3a2;
+    --grey-200: #cacac9;
+    --grey-100: #f2f2f1;
+
+    /* Yellow Variants */
+    --yellow-700: #fff0d9;
+    --yellow-600: #f8c200;
+    --yellow-500: #c89d00;
+    --yellow-400: #9b7900;
+    --yellow-300: #705800;
+    --yellow-200: #483700;
+    --yellow-100: #241a00;
+
+    /* Pink Variants */
+    --pink-700: #48001d;
+    --pink-600: #81013b;
+    --pink-500: #bf025a;
+    --pink-400: #fe177b;
+    --pink-300: #ff83a4;
+    --pink-200: #ffc1cf;
+    --pink-100: #ffecf0;
+
+    /* Olive Green Variants */
+    --olive-700: #111a04;
+    --olive-600: #2a3a0e;
+    --olive-500: #455e1c;
+    --olive-400: #62832a;
+    --olive-300: #82ab3a;
+    --olive-200: #a2d54a;
+    --olive-100: #ccfd87;
+
+    /* Orange Variants */
+    --orange-700: #2f1401;
+    --orange-600: #5b2d05;
+    --orange-500: #8c480d;
+    --orange-400: #c06516;
+    --orange-300: #f78420;
+    --orange-200: #fdbb9f;
+    --orange-100: #feede7;
+}
