@@ -18,7 +18,7 @@
     --text-body: 300 0.875rem/140% var(--font-family-text);
     --text-pre-title: 400 0.625rem var(--font-family-text);
     --text-link-text: 600 0.875rem var(--font-family-text);
-    --text-bottom-text: 800 1rem var(--font-family-text);
+    --text-button-text: 800 1rem var(--font-family-text);
     --text-smaller-text: 300 0.875rem/140% var(--font-family-text);
 
     /* ----- Colors ----- */
