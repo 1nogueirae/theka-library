@@ -1,4 +1,4 @@
-import TextInputStyles from './TextInput.module.css';
+import TextInputStyles from '@/components/TextInput.module.css';
 import type { ReactNode } from 'react'
 
 interface TextInputProps {
