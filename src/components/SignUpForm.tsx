@@ -29,6 +29,7 @@ function SignUpForm() {
                     placeholder="seuemail@gmail.com"
                     onChange={setEmail}
                     label="E-mail"
+                    type="email"
                 />
                 <TextInput
                     id="password"
@@ -51,13 +52,14 @@ function SignUpForm() {
                 <div className={styles.actions}>
                     <Button
                         text="Voltar"
-                        onClick={() => console.log('Cancelar')}
+                        onClick={() => console.log('Voltar')}
                         variant="secondary"
                     />
                     <Button
                         text="Enviar"
-                        onClick={() => console.log('Salvar')}
+                        onClick={() => console.log('Enviar')}
                         variant="primary"
+                        type="submit"
                     />
                 </div>
             </form>
