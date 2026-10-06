@@ -20,6 +20,7 @@ function LoginForm() {
                     placeholder="Digite seu email"
                     onChange={setEmail}
                     label="E-mail"
+                    type="email"
                 />
                 <TextInput
                     id="password"
@@ -39,6 +40,7 @@ function LoginForm() {
                     <Button
                         text="Entrar"
                         onClick={() => console.log('Entrar')}
+                        type="submit"
                     />
                 </div>
             </form>
