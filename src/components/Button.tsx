@@ -7,13 +7,15 @@ interface ButtonProps {
     onClick: () => void;
     icon?: ReactNode;
     variant?: 'primary' | 'secondary';
+    type?: 'button' | 'submit';
 }
 
 function Button({
     text,
     onClick,
     icon,
-    variant = 'primary'
+    variant = 'primary',
+    type = 'button'
 }: ButtonProps) {
     return (
         <button
@@ -25,7 +27,7 @@ function Button({
                         : ButtonStyles.buttonSecondary
                 ].join(' ')
             }
-            type="button"
+            type={type}
             onClick={onClick}>
             {text}
             {icon && <span>{icon}</span>}
