@@ -19,6 +19,7 @@ function RecoverPasswordForm() {
                     placeholder="Digite seu email"
                     onChange={setEmail}
                     label="E-mail"
+                    type="email"
                 />
 
                 <div className={styles.actions}>
@@ -29,8 +30,9 @@ function RecoverPasswordForm() {
                     />
                     <Button
                         text="Enviar"
-                        onClick={() => console.log('Entrar')}
+                        onClick={() => console.log('Enviar')}
                         variant="primary"
+                        type="submit"
                     />
                 </div>
             </form>
