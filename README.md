@@ -82,6 +82,6 @@ Cada pasta de desenvolvimento tem um documento `.md` com o nome dela explicando 
 
 ## 👤 Desenvolvedor
 
-- [nome do membro]
+- Emanuel Lucas Nogueira da Silva
 
 © **EJECT**
