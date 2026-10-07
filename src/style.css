@@ -2,67 +2,24 @@
 
     /* ----- Typography ----- */
 
-    /* --- Headers --- */
     --font-family-header: 'DM Sans', sans-serif;
+    --font-family-text: 'Inter', sans-serif;
     --letter-spacing-header: -0.02em;
 
-    /* Header 1 */
-    --font-style-h1: 700;
-    --font-size-h1: 64px;
-    --line-height-h1: 60px;
-
-    /* Header 2 */
-    --font-style-h2: 700;
-    --font-size-h2: 40px;
-    --line-height-h2: 40px;
-
-    /* Header 3 */
-    --font-style-h3: 700;
-    --font-size-h3: 32px;
-    --line-height-h3: normal;
-
-    /* Header 4 */
-    --font-style-h4: 700;
-    --font-size-h4: 20px;
-    --line-height-h4: normal;
+    /* --- Headers --- */
+    --text-h1: 700 4rem/3.75rem var(--font-family-header);
+    --text-h2: 700 2.5rem/2.5rem var(--font-family-header);
+    --text-h3: 700 2rem var(--font-family-header);
+    --text-h4: 700 1.25rem var(--font-family-header);
 
     /* --- General texts --- */
-    --font-family-text: 'Inter', sans-serif;
-    
-    /* Subtitle */
-    --font-style-subtitle: 300;
-    --font-size-subtitle: 24px;
-    --line-height-subtitle: normal;
-
-    /* Body 700 */
-    --font-style-body-700: 600;
-    --font-size-body-700: 18px;
-    --line-height-body-700: 140%;
-
-    /* Body */
-    --font-style-body: 300;
-    --font-size-body: 14px;
-    --line-height-body: 140%;
-
-    /* Pre Title */
-    --font-style-pre-title: 400;
-    --font-size-pre-title: 10px;
-    --line-height-pre-title: normal;
-
-    /* Link Text */
-    --font-style-link-text: 600;
-    --font-size-link-text: 14px;
-    --line-height-link-text: normal;
-
-    /* Bottom text */
-    --font-style-bottom-text: 800;
-    --font-size-bottom-text: 16px;
-    --line-height-bottom-text: normal;
-
-    /* Smaller Text */
-    --font-style-smaller-text: 300;
-    --font-size-smaller-text: 14px;
-    --line-height-smaller-text: 140%;    
+    --text-subtitle: 300 1.5rem var(--font-family-text);
+    --text-body-bold: 600 1.125rem/140% var(--font-family-text);
+    --text-body: 300 0.875rem/140% var(--font-family-text);
+    --text-pre-title: 400 0.625rem var(--font-family-text);
+    --text-link-text: 600 0.875rem var(--font-family-text);
+    --text-button-text: 800 1rem var(--font-family-text);
+    --text-smaller-text: 300 0.875rem/140% var(--font-family-text);
 
     /* ----- Colors ----- */
 
@@ -76,13 +33,13 @@
     --grey-100: #f2f2f1;
 
     /* Yellow Variants */
-    --yellow-700: #fff0d9;
-    --yellow-600: #f8c200;
-    --yellow-500: #c89d00;
+    --yellow-700: #241a00;
+    --yellow-600: #483700;
+    --yellow-500: #705800;
     --yellow-400: #9b7900;
-    --yellow-300: #705800;
-    --yellow-200: #483700;
-    --yellow-100: #241a00;
+    --yellow-300: #c89d00;
+    --yellow-200: #f8c200;
+    --yellow-100: #fff0d9;
 
     /* Pink Variants */
     --pink-700: #48001d;
@@ -110,4 +67,45 @@
     --orange-300: #f78420;
     --orange-200: #fdbb9f;
     --orange-100: #feede7;
+
+    /* ----- Spacing ----- */
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 0.75rem;  /* 12px */
+    --space-4: 1rem;     /* 16px */
+    --space-5: 1.25rem;  /* 20px */
+    --space-6: 1.5rem;   /* 24px */
+    --space-8: 2rem;     /* 32px */
+    --space-10: 2.5rem;  /* 40px */
+    --space-12: 3rem;    /* 48px */
+    --space-16: 4rem;    /* 64px */
+    --space-24: 6rem;    /* 96px */
+
+    /* ----- Radius ----- */
+
+    --radius-lg: 30px;
+    --radius-full: 9999px;
+
 }
+
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+body {
+    font: var(--text-body);
+    margin: 0;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+h1, h2, h3, h4 {
+    letter-spacing: var(--letter-spacing-header);
+}
+
+h1 { font: var(--text-h1); }
+h2 { font: var(--text-h2); }
+h3 { font: var(--text-h3); }
+h4 { font: var(--text-h4); }

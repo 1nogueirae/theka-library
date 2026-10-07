@@ -1,0 +1,30 @@
+.button {
+    font: var(--text-button-text);
+    display: flex;
+    width: fit-content;
+    border-radius: var(--radius-full);
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-5);
+}
+
+.buttonPrimary {
+    background-color: var(--orange-300);
+    color: white;
+    border: none;
+}
+
+.buttonSecondary {
+    background-color: transparent;
+    color: var(--orange-300);
+    border: 2px solid var(--orange-300);
+}
+
+.buttonPrimary:hover {
+    background-color: var(--orange-500);
+    cursor: pointer;
+}
+
+.buttonSecondary:hover {
+    background-color: var(--orange-100);
+    cursor: pointer;
+}

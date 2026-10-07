@@ -1,5 +1,7 @@
+import BaseAuthPage from '@/pages/BaseAuthPage'
+
 function App() {
-  return <></>;
+  return <BaseAuthPage />;
 }
 
 export default App;
