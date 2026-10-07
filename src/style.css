@@ -13,13 +13,13 @@
     --text-h4: 700 1.25rem var(--font-family-header);
 
     /* --- General texts --- */
-    --text-subtitle: 300 1.5rem var(--font-family-text);
-    --text-body-bold: 600 1.125rem/140% var(--font-family-text);
-    --text-body: 300 0.875rem/140% var(--font-family-text);
-    --text-pre-title: 400 0.625rem var(--font-family-text);
-    --text-link-text: 600 0.875rem var(--font-family-text);
-    --text-button-text: 800 1rem var(--font-family-text);
-    --text-smaller-text: 300 0.875rem/140% var(--font-family-text);
+    --text-subtitle: 300 1.5rem var(--font-family-text); /* 24px */
+    --text-body-bold: 600 1.125rem/140% var(--font-family-text); /* 18px */
+    --text-body: 300 0.875rem/140% var(--font-family-text); /* 14px */
+    --text-pre-title: 400 0.625rem var(--font-family-text); /* 10px */
+    --text-link-text: 600 0.875rem var(--font-family-text); /* 14px */
+    --text-button-text: 800 1rem var(--font-family-text); /* 16px */
+    --text-smaller-text: 300 0.875rem/140% var(--font-family-text); /* 14px */
 
     /* ----- Colors ----- */
 
