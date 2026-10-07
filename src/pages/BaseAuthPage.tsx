@@ -4,8 +4,9 @@ import MascoteLaranja from '@/assets/images/Mascote-Laranja300.svg'
 import LogotipoLaranja from '@/assets/images/LogotipoCompleto-Laranja.svg'
 
 import LoginForm from '@/components/LoginForm'
-import RecoverPasswordForm from '@/components/RecoverPasswordForm'
-import SignUpForm from '@/components/SignUpForm'
+// import RecoverPasswordForm from '@/components/RecoverPasswordForm'
+// import ResetPasswordForm from '@/components/ResetPasswordForm'
+// import SignUpForm from '@/components/SignUpForm'
 
 function BaseAuthPage() {
     return (
@@ -17,9 +18,10 @@ function BaseAuthPage() {
 
             <div className={styles.formContainer}>
                 <div className={styles.formContent}>
-                    {/* <LoginForm /> */}
+                    <LoginForm />
                     {/* <RecoverPasswordForm /> */}
-                    <SignUpForm />
+                    {/* <ResetPasswordForm /> */}
+                    {/* <SignUpForm /> */}
                 </div>
             </div>
         </div>
