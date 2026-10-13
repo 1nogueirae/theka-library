@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router';
+
 import TextInput from '@/components/TextInput'
 import Button from '@/components/Button'
 
@@ -6,6 +8,8 @@ import styles from '@/components/AuthForm.module.css'
 import { useState } from 'react'
 
 function SignUpForm() {
+    const navigate = useNavigate()
+
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -52,7 +56,7 @@ function SignUpForm() {
                 <div className={styles.actions}>
                     <Button
                         text="Voltar"
-                        onClick={() => console.log('Voltar')}
+                        onClick={() => navigate('/login')}
                         variant="secondary"
                     />
                     <Button

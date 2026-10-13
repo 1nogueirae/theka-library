@@ -1,6 +1,8 @@
 import TextInput from '@/components/TextInput'
 import Button from '@/components/Button'
 
+import { Link } from 'react-router'
+
 import styles from '@/components/AuthForm.module.css'
 
 import { useState } from 'react'
@@ -32,8 +34,8 @@ function LoginForm() {
                 />
 
                 <div className={styles.helpLinksContainer}>
-                    <a href="#">Esqueceu a senha?</a>
-                    <a href="#">Ainda não tem cadastro?</a>
+                    <Link to="/recoverpassword">Esqueceu a senha?</Link>
+                    <Link to="/signup">Ainda não tem cadastro?</Link>
                 </div>
 
                 <div className={styles.actions}>

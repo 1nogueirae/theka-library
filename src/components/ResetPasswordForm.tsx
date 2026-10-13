@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router';
 
 import Button from '@/components/Button'
 import TextInput from '@/components/TextInput'
@@ -6,6 +7,7 @@ import TextInput from '@/components/TextInput'
 import styles from '@/components/AuthForm.module.css'
 
 function ResetPasswordForm() {
+    const navigate = useNavigate()
 
     const [password, setPassword] = useState('')
     const [passwordConfirmation, setPasswordConfirmation] = useState('')
@@ -35,7 +37,7 @@ function ResetPasswordForm() {
                 <div className={styles.actions}>
                     <Button
                         text="Voltar"
-                        onClick={() => console.log('Voltar')}
+                        onClick={() => navigate('/login')}
                         variant="secondary"
                     />
                     <Button

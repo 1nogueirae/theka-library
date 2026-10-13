@@ -4,8 +4,11 @@ import Button from '@/components/Button'
 import styles from '@/components/AuthForm.module.css'
 
 import { useState } from 'react'
+import { useNavigate } from 'react-router'
 
 function RecoverPasswordForm() {
+    const navigate = useNavigate()
+    
     const [email, setEmail] = useState('')
 
     return (
@@ -25,7 +28,7 @@ function RecoverPasswordForm() {
                 <div className={styles.actions}>
                     <Button
                         text="Voltar"
-                        onClick={() => console.log('Voltar')}
+                        onClick={() => navigate('/login')}
                         variant="secondary"
                     />
                     <Button
