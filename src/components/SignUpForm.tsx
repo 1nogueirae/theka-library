@@ -1,57 +1,85 @@
 import { useNavigate } from 'react-router';
 
 import TextInput from '@/components/TextInput'
+import PasswordInput from '@/components/PasswordInput'
 import Button from '@/components/Button'
 
 import styles from '@/components/AuthForm.module.css'
 
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+
+import { namesQuantity } from '@/utils/string'
+
+interface SignUpFormData {
+    name: string;
+    email: string;
+    password: string;
+    passwordConfirmation: string;
+}
 
 function SignUpForm() {
+    const { register, handleSubmit, formState } = useForm<SignUpFormData>()
     const navigate = useNavigate()
-
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [passwordConfirmation, setPasswordConfirmation] = useState('')
 
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Cadastro</h1>
 
-            <form className={styles.form}>
+            <form
+                className={styles.form}
+                onSubmit={handleSubmit((data) => console.log(data))}
+                noValidate
+            >
                 <TextInput
+                    {...register('name',
+                        {
+                            required: 'O nome é obrigatório',
+                            validate: (value) => namesQuantity(value) >= 2 || 'O nome deve conter pelo menos 2 palavras'
+                        }
+                    )}
                     id="name"
-                    value={name}
                     placeholder="Seu nome completo"
-                    onChange={setName}
                     label="Nome"
+                    error={formState.errors.name?.message}
                 />
                 <TextInput
+                    {...register('email',
+                        {
+                            required: 'O e-mail é obrigatório',
+                            pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Formato de e-mail inválido' }
+                        }
+                    )}
                     id="email"
-                    value={email}
                     placeholder="seuemail@gmail.com"
-                    onChange={setEmail}
                     label="E-mail"
                     type="email"
+                    error={formState.errors.email?.message}
                 />
-                <TextInput
+                <PasswordInput
+                    {...register('password',
+                        {
+                            required: 'A senha é obrigatória',
+                            minLength: { value: 6, message: 'A senha deve ter no mínimo 6 caracteres' }
+                        }
+                    )}
                     id="password"
-                    value={password}
                     placeholder="Sua senha"
-                    onChange={setPassword}
                     label="Senha"
-                    type="password"
+                    error={formState.errors.password?.message}
+                />
+                <PasswordInput
+                    {...register('passwordConfirmation',
+                        {
+                            required: 'A confirmação de senha é obrigatória',
+                            validate: (value, formValues) => value === formValues.password || 'As senhas não coincidem'
+                        }
+                    )}
+                    id="password-confirmation"
+                    placeholder="Confirme sua senha"
+                    label="Confirmar senha"
+                    error={formState.errors.passwordConfirmation?.message}
                 />
 
-                <TextInput
-                    id="password-confirmation"
-                    value={passwordConfirmation}
-                    placeholder="Confirme sua senha"
-                    onChange={setPasswordConfirmation}
-                    label="Confirmar senha"
-                    type="password"
-                />
 
                 <div className={styles.actions}>
                     <Button
@@ -61,7 +89,6 @@ function SignUpForm() {
                     />
                     <Button
                         text="Enviar"
-                        onClick={() => console.log('Enviar')}
                         variant="primary"
                         type="submit"
                     />
