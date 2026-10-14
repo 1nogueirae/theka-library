@@ -4,7 +4,7 @@ import ButtonStyles from '@/components/Button.module.css';
 
 interface ButtonProps {
     text: string;
-    onClick: () => void;
+    onClick?: () => void;
     icon?: ReactNode;
     variant?: 'primary' | 'secondary';
     type?: 'button' | 'submit';
