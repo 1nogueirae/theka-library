@@ -1,10 +1,10 @@
 import { Routes, Route, Navigate } from 'react-router'
 
 import BaseAuthPage from '@/pages/BaseAuthPage'
-import LoginForm from '@/components/LoginForm'
-import RecoverPasswordForm from '@/components/RecoverPasswordForm'
-import ResetPasswordForm from '@/components/ResetPasswordForm'
-import SignUpForm from '@/components/SignUpForm'
+import LoginForm from '@/components/forms/LoginForm'
+import RecoverPasswordForm from '@/components/forms/RecoverPasswordForm'
+import ResetPasswordForm from '@/components/forms/ResetPasswordForm'
+import SignUpForm from '@/components/forms/SignUpForm'
 
 function App() {
   return (

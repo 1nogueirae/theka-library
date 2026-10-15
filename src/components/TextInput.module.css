@@ -45,3 +45,9 @@
 .textInputContainer:focus-within {
     border-color: var(--orange-500);
 }
+
+.error {
+    color: var(--orange-500);
+    font: var(--text-smaller-text);
+    margin: var(--space-1);
+}

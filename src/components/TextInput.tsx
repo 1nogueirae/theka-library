@@ -1,24 +1,19 @@
 import TextInputStyles from '@/components/TextInput.module.css';
-import type { ReactNode } from 'react'
+import type { ReactNode, ComponentProps } from 'react'
 
-interface TextInputProps {
-    id: string;
-    value: string;
-    onChange: (value: string) => void;
-    placeholder?: string;
+interface TextInputProps extends ComponentProps<'input'> {
     icon?: ReactNode;
     label?: string;
-    type?: 'text' | 'email' | 'password';
+    error?: string;
 }
 
 function TextInput({
     id,
-    value,
-    onChange,
-    placeholder = 'Digite...',
     icon,
     label,
-    type = 'text'
+    error,
+    placeholder = "Digite...",
+    ...rest
 }: TextInputProps) {
     return (
         <div className={TextInputStyles.field}>
@@ -26,17 +21,19 @@ function TextInput({
             <div className={TextInputStyles.textInputContainer} >
                 <input
                     id={id}
-                    className={TextInputStyles.input}
-                    value={value}
-                    onChange={(e) => onChange(e.target.value)}
                     placeholder={placeholder}
-                    type={type}
+                    aria-invalid={!!error}
+                    aria-describedby={error ? `${id}-error` : undefined}
+                    className={TextInputStyles.input}
+                    {...rest}
                 />
                 {icon && <div className={TextInputStyles.iconContainer}>{icon}</div>}
             </div>
+            {error && <p id={`${id}-error`} className={TextInputStyles.error}>{error}</p>}
         </div>
 
     )
 }
 
 export default TextInput;
+export type { TextInputProps };
