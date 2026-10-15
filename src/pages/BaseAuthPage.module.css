@@ -23,6 +23,10 @@
     margin-bottom: var(--space-12);
 }
 
+.leftLeg {
+    justify-content: flex-start;
+}
+
 .logo {
     position: absolute;
     left: var(--space-16);
@@ -36,8 +40,7 @@
     flex-grow: 1;
     min-width: 0;
     flex-direction: column;
-    justify-content: safe center;
-    padding: var(--space-16);
+    padding: 20dvh var(--space-16) var(--space-16);
     background-color: white;
     border-top-left-radius: var(--radius-lg);
     border-bottom-left-radius: var(--radius-lg);
@@ -47,4 +50,33 @@
 .formContent {
     width: 100%;
     max-width: 30rem;
+}
+
+
+@media (max-width: 768px) {
+    .baseAuthPageContainer {
+        flex-direction: column;
+    }
+
+    .illustrationContainer {
+        max-height: 20rem;
+    }
+
+    .mascote {
+        height: 100%;
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .formContainer {
+        border-top-left-radius: var(--radius-lg);
+        border-top-right-radius: var(--radius-lg);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: var(--space-8) var(--space-6);
+    }
 }
