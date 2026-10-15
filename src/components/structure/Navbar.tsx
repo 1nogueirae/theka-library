@@ -1,7 +1,7 @@
 import LogotipoIcone from '@/assets/icons/LogotipoIcone.svg?react'
 import UserCircle from '@/assets/icons/UserCircle.svg?react'
 
-import styles from '@/components/Navbar.module.css'
+import styles from '@/components/structure/Navbar.module.css'
 
 function Navbar() {
     return (

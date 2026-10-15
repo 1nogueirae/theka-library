@@ -8,7 +8,7 @@ import XLogo from '@/assets/icons/XLogo.svg?react'
 import Info from '@/assets/icons/Info.svg?react'
 import Question from '@/assets/icons/Question.svg?react'
 
-import styles from '@/components/Footer.module.css'
+import styles from '@/components/structure/Footer.module.css'
 
 function Footer() {
     return (
