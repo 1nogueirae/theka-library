@@ -5,32 +5,50 @@ import { Link } from 'react-router'
 
 import styles from '@/components/forms/AuthForm.module.css'
 
-import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+
+interface LoginFormData {
+    email: string;
+    password: string;
+}
 
 function LoginForm() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+
+    const { register, handleSubmit, formState } = useForm<LoginFormData>()
 
     return (
         <div className={styles.container}>
             <h1 className={styles.title}>Login</h1>
 
-            <form className={styles.form}>
+            <form
+                className={styles.form}
+                onSubmit={handleSubmit((data) => console.log(data))}
+                noValidate
+            >
                 <TextInput
+                    {...register('email',
+                        {
+                            required: 'O e-mail é obrigatório',
+                            pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: 'Formato de e-mail inválido' }
+                        }
+                    )}
                     id="email"
-                    value={email}
                     placeholder="Digite seu email"
-                    onChange={setEmail}
                     label="E-mail"
                     type="email"
+                    error={formState.errors.email?.message}
                 />
                 <TextInput
+                    {...register('password',
+                        {
+                            required: 'A senha é obrigatória'
+                        }
+                    )}
                     id="password"
-                    value={password}
                     placeholder="Digite sua senha"
-                    onChange={setPassword}
                     label="Senha"
                     type="password"
+                    error={formState.errors.password?.message}
                 />
 
                 <div className={styles.helpLinksContainer}>
