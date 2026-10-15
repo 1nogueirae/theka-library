@@ -34,3 +34,17 @@
     color: var(--orange-300);
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    .container {
+        gap: var(--space-8);
+    }
+
+    .title {
+        font: var(--text-h3);
+    }
+
+    .actions {
+        justify-content: center;
+    }
+}
