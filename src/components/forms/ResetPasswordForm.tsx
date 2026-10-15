@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router';
 import Button from '@/components/Button'
 import TextInput from '@/components/TextInput'
 
-import styles from '@/components/AuthForm.module.css'
+import styles from '@/components/forms/AuthForm.module.css'
 
 function ResetPasswordForm() {
     const navigate = useNavigate()

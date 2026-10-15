@@ -4,7 +4,7 @@ import TextInput from '@/components/TextInput'
 import PasswordInput from '@/components/PasswordInput'
 import Button from '@/components/Button'
 
-import styles from '@/components/AuthForm.module.css'
+import styles from '@/components/forms/AuthForm.module.css'
 
 import { useForm } from 'react-hook-form'
 

@@ -1,7 +1,7 @@
 import TextInput from '@/components/TextInput'
 import Button from '@/components/Button'
 
-import styles from '@/components/AuthForm.module.css'
+import styles from '@/components/forms/AuthForm.module.css'
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router'
