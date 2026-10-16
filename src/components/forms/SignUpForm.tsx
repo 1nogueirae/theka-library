@@ -10,6 +10,8 @@ import { useForm } from 'react-hook-form'
 
 import { namesQuantity } from '@/utils/string'
 
+import { authService } from '@/services/auth'
+
 interface SignUpFormData {
     name: string;
     email: string;
@@ -27,7 +29,17 @@ function SignUpForm() {
 
             <form
                 className={styles.form}
-                onSubmit={handleSubmit((data) => console.log(data))}
+                onSubmit={handleSubmit((data) => {
+                    const credentials = {
+                        username: data.email.split('@')[0],
+                        email: data.email,
+                        password: data.password,
+                        password_confirm: data.passwordConfirmation,
+                        firstName: data.name.split(' ')[0],
+                        lastName: data.name.split(' ').slice(1).join(' ')
+                    }
+                    authService.register(credentials)
+                })}
                 noValidate
             >
                 <TextInput
