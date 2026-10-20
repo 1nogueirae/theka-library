@@ -38,7 +38,9 @@ function SignUpForm() {
                         firstName: data.name.split(' ')[0],
                         lastName: data.name.split(' ').slice(1).join(' ')
                     }
-                    authService.register(credentials)
+                    authService.register(credentials).then((response) => {
+                        if (response === 201) navigate('/login')
+                    })
                 })}
                 noValidate
             >
