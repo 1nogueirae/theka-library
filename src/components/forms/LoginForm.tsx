@@ -7,6 +7,8 @@ import styles from '@/components/forms/AuthForm.module.css'
 
 import { useForm } from 'react-hook-form'
 
+import { authService } from '@/services/auth'
+
 interface LoginFormData {
     email: string;
     password: string;
@@ -22,7 +24,16 @@ function LoginForm() {
 
             <form
                 className={styles.form}
-                onSubmit={handleSubmit((data) => console.log(data))}
+                onSubmit={handleSubmit((data) => {
+                    const credentials = {
+                        email: data.email,
+                        password: data.password
+                    }
+                    authService.login(credentials).then((tokens) => {
+                        localStorage.setItem('token', tokens.access)
+                        localStorage.setItem('refresh', tokens.refresh)
+                    })
+                })}
                 noValidate
             >
                 <TextInput
@@ -59,7 +70,6 @@ function LoginForm() {
                 <div className={styles.actions}>
                     <Button
                         text="Entrar"
-                        onClick={() => console.log('Entrar')}
                         type="submit"
                     />
                 </div>

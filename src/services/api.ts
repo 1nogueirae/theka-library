@@ -22,3 +22,23 @@ api.interceptors.request.use(
 );
 
 export const publicApi = axios.create(config);
+
+api.interceptors.response.use(
+    (response) => response,
+    async (error) => {
+        const originalRequest = error.config;
+        const isUnauthorized = error.response && error.response.status === 401;
+
+        if (isUnauthorized && !originalRequest.alreadyRetried) {
+            originalRequest.alreadyRetried = true;
+
+            const refresh = localStorage.getItem('refresh');
+            const response = await publicApi.post('/auth/token/refresh/', { refresh: refresh });
+            localStorage.setItem('token', response.data.access);
+
+            return api(originalRequest);
+        }
+
+        return Promise.reject(error);
+    }
+);
