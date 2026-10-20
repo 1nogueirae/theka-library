@@ -1,11 +1,12 @@
-import {api, publicApi} from '@/services/api';
-import type { RegisterCredentials, RegisterResponse } from '@/types/auth.types';
+import { api, publicApi } from '@/services/api';
+import type { RegisterCredentials } from '@/types/auth.types';
 
 export const authService = {
-    register: async (credentials: RegisterCredentials): Promise<RegisterResponse> => {
-        
-        const response = await publicApi.post<RegisterResponse>('/users/', credentials);
+    register: async (credentials: RegisterCredentials): Promise<number> => {
+        const response = await publicApi.post('/users/', credentials);
 
-        return response.data;
+        if (response.status !== 201) throw new Error('Erro ao registrar usuário');
+
+        return response.status;
     }
 };  
