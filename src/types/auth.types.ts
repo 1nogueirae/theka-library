@@ -6,3 +6,13 @@ export type RegisterCredentials = {
     firstName: string;
     lastName: string;
 }
+
+export type LoginCredentials = {
+    email: string;
+    password: string;
+}
+
+export type LoginResponse = {
+    access: string;
+    refresh: string;
+}
