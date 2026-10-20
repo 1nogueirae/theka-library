@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-const api = axios.create({
+const config = {
     baseURL: 'https://thekaapitrainee1.pythonanywhere.com/',
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
     },
-});
+}
+
+export const api = axios.create(config);
 
 api.interceptors.request.use(
     (config) => {
@@ -19,4 +21,4 @@ api.interceptors.request.use(
     }
 );
 
-export default api;
+export const publicApi = axios.create(config);
