@@ -1,5 +1,9 @@
 :root {
 
+    /* ----- Layout ----- */
+
+    --content-width: 67.938rem;
+
     /* ----- Typography ----- */
 
     --font-family-header: 'DM Sans', sans-serif;
@@ -83,6 +87,7 @@
 
     /* ----- Radius ----- */
 
+    --radius-card: 14px;
     --radius-lg: 30px;
     --radius-full: 9999px;
 
