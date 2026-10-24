@@ -49,3 +49,18 @@
     height: 2rem;
     max-width: fit-content;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 2.5rem;
+        padding-bottom: 3rem;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .logo {
+        max-width: 12rem;
+    }
+}
