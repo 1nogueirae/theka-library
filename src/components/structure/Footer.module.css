@@ -1,21 +1,19 @@
 .container {
     background-color: var(--pink-600);
-
-    margin: 0;
-
-    padding-left: 12.0rem;
-    padding-right: 12.0rem;
     padding-top: 4rem;
     padding-bottom: 7rem;
+}
+
+.content {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding-inline: 1rem;
 
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-
-    max-height: 20rem;
-
-    gap: 8rem;
+    gap: 2rem;
 }
 
 .logo {
