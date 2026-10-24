@@ -9,12 +9,15 @@ import { useForm } from 'react-hook-form'
 
 import { authService } from '@/services/auth'
 
+import { useNavigate } from 'react-router';
+
 interface LoginFormData {
     email: string;
     password: string;
 }
 
 function LoginForm() {
+    const navigate = useNavigate()
 
     const { register, handleSubmit, formState } = useForm<LoginFormData>()
 
@@ -32,6 +35,7 @@ function LoginForm() {
                     authService.login(credentials).then((tokens) => {
                         localStorage.setItem('token', tokens.access)
                         localStorage.setItem('refresh', tokens.refresh)
+                        if (tokens.access) navigate('/collection')
                     })
                 })}
                 noValidate
