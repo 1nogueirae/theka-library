@@ -6,7 +6,7 @@ interface ButtonProps {
     text: string;
     onClick?: () => void;
     icon?: ReactNode;
-    variant?: 'primary' | 'secondary';
+    variant?: 'primary' | 'secondary' | 'pink';
     type?: 'button' | 'submit';
 }
 
@@ -24,13 +24,18 @@ function Button({
                     ButtonStyles.button,
                     variant === 'primary'
                         ? ButtonStyles.buttonPrimary
-                        : ButtonStyles.buttonSecondary
+                        : variant === 'secondary'
+                            ? ButtonStyles.buttonSecondary
+                            : variant === 'pink'
+                                ? ButtonStyles.buttonPink
+                                : ''
+
                 ].join(' ')
             }
             type={type}
             onClick={onClick}>
             {text}
-            {icon && <span>{icon}</span>}
+            {icon && <span className={ButtonStyles.icon}>{icon}</span>}
         </button>
     )
 }
