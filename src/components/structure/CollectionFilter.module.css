@@ -1,0 +1,38 @@
+.container {
+    width: 100%;
+    margin-bottom: 4.5rem;
+}
+
+.filterContainer {
+    color: var(--pink-600);
+    display: flex;
+    width: 100%;
+    border-radius: var(--radius-full);
+    border-width: 2px;
+    border-style: solid;
+    padding: var(--space-4) var(--space-8);
+    align-items: center;
+}
+
+.selectsContainer {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filterContainer > input {
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.filterContainer > button {
+    margin-left: 1.125rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        display: none;
+    }
+}
