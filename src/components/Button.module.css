@@ -1,6 +1,8 @@
 .button {
     font: var(--text-button-text);
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: fit-content;
     border-radius: var(--radius-full);
     gap: var(--space-2);
@@ -19,6 +21,12 @@
     border: 2px solid var(--orange-300);
 }
 
+.buttonPink {
+    background-color: var(--pink-600);
+    color: white;
+    border: none;
+}
+
 .buttonPrimary:hover {
     background-color: var(--orange-500);
     cursor: pointer;
@@ -27,4 +35,14 @@
 .buttonSecondary:hover {
     background-color: var(--orange-100);
     cursor: pointer;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon svg {
+    width: 1.25em;
+    height: 1.25em;
 }
