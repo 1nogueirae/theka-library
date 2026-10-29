@@ -1,0 +1,101 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-8);
+    margin-bottom: var(--space-16);
+}
+
+.pages {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+}
+
+.page,
+.activePage,
+.arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.page,
+.activePage {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: var(--radius-full);
+    font: var(--text-h3);
+}
+
+.page {
+    background: transparent;
+    color: var(--grey-200);
+}
+
+.page:hover,
+.page:focus-visible {
+    color: var(--pink-300);
+}
+
+.activePage {
+    background-color: var(--pink-600);
+    color: white;
+}
+
+.arrow {
+    width: 2.875rem;
+    height: 2.875rem;
+    border-radius: var(--radius-full);
+    background-color: var(--pink-300);
+}
+
+.arrow span {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-top: 0.1875rem solid white;
+    border-left: 0.1875rem solid white;
+    transform: rotate(-45deg);
+    margin-left: 0.25rem;
+}
+
+.nextArrow span {
+    transform: rotate(135deg);
+    margin-left: -0.25rem;
+}
+
+.arrow:hover:not(:disabled),
+.arrow:focus-visible:not(:disabled) {
+    background-color: var(--pink-400);
+}
+
+.arrow:disabled {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.page:focus-visible,
+.activePage:focus-visible,
+.arrow:focus-visible {
+    outline: 0.125rem solid var(--pink-600);
+    outline-offset: 0.1875rem;
+}
+
+@media (max-width: 768px) {
+    .pagination {
+        gap: var(--space-4);
+    }
+
+    .pages {
+        gap: var(--space-2);
+    }
+
+    .page,
+    .activePage {
+        width: 2.75rem;
+        height: 2.75rem;
+    }
+}
