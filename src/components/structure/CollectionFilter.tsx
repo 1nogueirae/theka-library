@@ -11,11 +11,21 @@ import { genreService } from '@/services/genres';
 import type { Genre } from '@/types/genre.types';
 import { publisherService } from '@/services/publishers';
 import type { Publisher } from '@/types/publisher.types';
+import type { SearchParams } from '@/types/books.types';
 
-function CollectionFilter() {
+type CollectionFilterProps = {
+    onApply: (params: SearchParams) => void;
+};
+
+function CollectionFilter({ onApply }: CollectionFilterProps) {
 
     const [genres, setGenres] = useState<Genre[]>([]);
     const [publishers, setPublishers] = useState<Publisher[]>([]);
+    const [selectedParams, setSelectedParams] = useState<SearchParams>({
+        title: '',
+        genre: '',
+        publisher: '',
+    });
 
     useEffect(() => {
         const getGenres = async () => {
@@ -38,24 +48,39 @@ function CollectionFilter() {
         getPublishers();
     }, [])
 
+    function handleParamChange(param: keyof SearchParams, value: string) {
+        setSelectedParams((currentParams) => ({
+            ...currentParams,
+            [param]: value,
+        }));
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.filterContainer}>
 
                 <input
                     placeholder="Fazer busca"
-                >
-                </input>
-
+                    value={selectedParams.title}
+                    onChange={(e) => handleParamChange('title', e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') onApply(selectedParams);
+                    }}  
+                />
+                
                 <div className={styles.selectsContainer}>
                     <Select
                         placeholder="Gênero"
                         options={genres.map((genre) => genre.nome)}
+                        value={selectedParams.genre}
+                        onChange={(value) => handleParamChange('genre', value)}
                     />
 
                     <Select
                         placeholder="Editora"
                         options={publishers.map((publisher) => publisher.nome)}
+                        value={selectedParams.publisher}
+                        onChange={(value) => handleParamChange('publisher', value)}
                     />
 
                 </div>
@@ -64,6 +89,7 @@ function CollectionFilter() {
                     text="Buscar"
                     variant="pink"
                     icon={<SerchIcon />}
+                    onClick={() => onApply(selectedParams)}
                 />
             </div>
 
