@@ -5,21 +5,21 @@ import { useState } from 'react'
 interface SelectProps {
     placeholder: string;
     options: string[];
-    onChange?: (value: string) => void;
+    value: string;
+    onChange: (value: string) => void;
 }
 
 function Select({
     placeholder,
     options,
+    value,
     onChange,
 }: SelectProps) {
     const [open, setOpen] = useState(false);
-    const [value, setValue] = useState('');
 
     function handleSelect(option: string) {
-        setValue(option);
         setOpen(false);
-        onChange?.(option);
+        onChange(option);
     }
 
     return (
