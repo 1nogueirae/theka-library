@@ -21,6 +21,49 @@
     display: block;
 }
 
+.collectionWrapper {
+    position: relative;
+}
+
+.buttonPlus {
+    background-color: var(--pink-600);
+    width: fit-content;
+    padding: 0.7rem 1.414rem;
+    border-radius: 6.25rem;
+    color: white;
+    position: absolute;
+    top: 15.25rem;
+    right: -2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: right 0.3s ease;
+}
+
+.buttonPlus:hover {
+    right: -6.5rem;
+}
+
+.buttonPlusLabel {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 700;
+    transition: width 0.3s ease, margin-right 0.3s ease;
+    user-select: none;
+}
+
+.buttonPlus:hover .buttonPlusLabel {
+    width: 8rem;
+    margin-right: 1rem;
+}
+
+.buttonPlus svg {
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
 @media (max-width: 768px) {
     .booksList {
         grid-template-columns: repeat(2, 1fr);
