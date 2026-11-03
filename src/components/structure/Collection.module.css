@@ -20,3 +20,14 @@
     object-fit: cover;
     display: block;
 }
+
+@media (max-width: 768px) {
+    .booksList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .bookCard {
+        height: auto;
+        aspect-ratio: 2 / 3;
+    }
+}
