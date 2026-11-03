@@ -8,3 +8,9 @@
     color: var(--pink-600);
     margin-bottom: 1.25rem;
 }
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+}
