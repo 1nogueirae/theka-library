@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import styles from '@/components/structure/CollectionFilter.module.css';
 
 import SerchIcon from '@/assets/icons/MagnifyingGlass.svg?react';
+import FadersIcon from '@/assets/icons/Faders.svg?react';
 
 import Button from '@/components/Button';
 import Select from '@/components/Select';
@@ -26,6 +27,7 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
         genre: '',
         publisher: '',
     });
+    const [filtersOpen, setFiltersOpen] = useState(false);
 
     useEffect(() => {
         const getGenres = async () => {
@@ -53,6 +55,11 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
             ...currentParams,
             [param]: value,
         }));
+    }
+
+    function handleApplyFilters() {
+        onApply(selectedParams);
+        setFiltersOpen(false);
     }
 
     return (
@@ -93,6 +100,41 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
                 />
             </div>
 
+            <div className={styles.filtersMenu}>
+                <button
+                    className={styles.filtersButton}
+                    onClick={() => setFiltersOpen(!filtersOpen)}
+                >
+                    <FadersIcon />
+                </button>
+
+                {filtersOpen && (
+                    <div className={styles.filtersPanel}>
+                        <h2 className={styles.filtersTitle}>Filtros</h2>
+
+                        <Select
+                            placeholder="Gênero"
+                            options={genres.map((genre) => genre.nome)}
+                            value={selectedParams.genre}
+                            onChange={(value) => handleParamChange('genre', value)}
+                        />
+
+                        <Select
+                            placeholder="Editora"
+                            options={publishers.map((publisher) => publisher.nome)}
+                            value={selectedParams.publisher}
+                            onChange={(value) => handleParamChange('publisher', value)}
+                        />
+
+                        <Button
+                            text="Filtrar"
+                            variant="pink"
+                            icon={<FadersIcon />}
+                            onClick={handleApplyFilters}
+                        />
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
