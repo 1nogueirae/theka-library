@@ -1,7 +1,6 @@
-/* Reserva o espaço do botão fechado; a caixa aberta sobrepõe o conteúdo abaixo */
 .selectContainer {
     position: relative;
-    width: 12.5rem;
+    width: var(--select-width, 12.5rem);
     height: 3rem;
     color: var(--pink-600);
 }
@@ -27,7 +26,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* Margem lateral para a linha divisória não encostar nas bordas */
     width: calc(100% - 2.5rem);
     height: calc(3rem - 4px);
     margin: 0 1.25rem;
@@ -55,7 +53,6 @@
     transform: rotate(180deg);
 }
 
-/* Fechada a lista tem altura 0; aberta cresce até no máximo 20rem e rola se passar disso */
 .options {
     list-style: none;
     margin: 0;
