@@ -28,6 +28,16 @@
     border: none;
 }
 
+.buttonPinkSecondary {
+    background-color: transparent;
+    color: var(--pink-600);
+    border: 2px solid var(--pink-600);
+}
+
+.buttonPinkSecondary:hover {
+    background-color: var(--pink-100);
+}
+
 .buttonPrimary:hover {
     background-color: var(--orange-500);
     cursor: pointer;
