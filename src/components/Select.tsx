@@ -30,7 +30,7 @@ function Select({
                     className={SelectStyles.trigger}
                     onClick={() => setOpen(!open)}
                 >
-                    {value || placeholder}
+                    {value || <span className={SelectStyles.placeholder}>{placeholder}</span>}
                     <CaretIcon className={SelectStyles.icon} />
                 </button>
 
