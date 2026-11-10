@@ -2,9 +2,18 @@
     display: flex;
     align-items: center;
     height: fit-content;
-    gap: 3.5rem;
-    max-width: 67.938rem;
-    margin: 0 auto;
+    gap: 3rem;
+    margin-top: 3.5rem;
+    margin-bottom: 5.5rem;
+    margin-inline: 3.5rem;
+    position: sticky;
+    top: 3.5rem;
+    z-index: 100;
+}
+
+.logo,
+.tabsContainer {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
@@ -31,6 +40,7 @@
     border-radius: 6.25rem;
     flex-direction: row;
     justify-content: space-between;
+    gap: 0.5rem;
     padding-left: 2.563rem;
     padding-right: 2.563rem;
     padding-bottom: 0.625rem;
@@ -41,4 +51,65 @@
 
 .tabsContainer h3 {
     margin: 0;
+    white-space: nowrap;
+}
+
+.tabs {
+    display: contents;
+}
+
+.wordmark {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+        margin-inline: 0;
+        top: 1.5rem;
+    }
+
+    .logo {
+        width: 3rem;
+    }
+
+    .tabsContainer {
+        position: relative;
+        justify-content: center;
+        padding-inline: 1rem;
+    }
+
+    .tabs {
+        display: none;
+    }
+
+    .wordmark {
+        display: block;
+        background: none;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .wordmark img {
+        display: block;
+        height: 2.25rem;
+    }
+
+    .open .tabs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        position: absolute;
+        top: calc(100% + 0.5rem);
+        left: 0;
+        right: 0;
+        padding: 1.25rem 1rem;
+        background: linear-gradient(to bottom right, var(--grey-200) 0%, white 60%);
+        border-radius: var(--radius-lg);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
 }
