@@ -5,6 +5,7 @@ import LogotipoCompleto from '@/assets/images/LogotipoCompleto-Cinza.svg'
 import styles from '@/components/structure/Navbar.module.css'
 
 import { useState } from 'react';
+import { NavLink } from 'react-router';
 
 function Navbar() {
 
@@ -30,13 +31,21 @@ function Navbar() {
 
                 <div className={styles.tabs}>
 
-                    <h3>Início</h3>
+                    <NavLink
+                        to="/collection"
+                        className={({ isActive }) => isActive ? `${styles.tab} ${styles.active}` : styles.tab}
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Acervo
+                    </NavLink>
 
-                    <h3>Acervo</h3>
-
-                    <h3>Sobre nós</h3>
-
-                    <h3>Contato</h3>
+                    <NavLink
+                        to="/about"
+                        className={({ isActive }) => isActive ? `${styles.tab} ${styles.active}` : styles.tab}
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        Sobre nós
+                    </NavLink>
 
                     <UserCircle />
 
