@@ -63,55 +63,25 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
     }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.filterContainer}>
+        <div>
+            <label htmlFor="search" className={styles.title}>
+                Veja nosso catálogo
+            </label>
 
-                <input
-                    placeholder="Fazer busca"
-                    value={selectedParams.title}
-                    onChange={(e) => handleParamChange('title', e.target.value)}
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter') onApply(selectedParams);
-                    }}  
-                />
-                
-                <div className={styles.selectsContainer}>
-                    <Select
-                        placeholder="Gênero"
-                        options={genres.map((genre) => genre.nome)}
-                        value={selectedParams.genre}
-                        onChange={(value) => handleParamChange('genre', value)}
+            <div className={styles.container}>
+                <div className={styles.filterContainer}>
+
+                    <input
+                        id="search"
+                        placeholder="Fazer busca"
+                        value={selectedParams.title}
+                        onChange={(e) => handleParamChange('title', e.target.value)}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') onApply(selectedParams);
+                        }}  
                     />
-
-                    <Select
-                        placeholder="Editora"
-                        options={publishers.map((publisher) => publisher.nome)}
-                        value={selectedParams.publisher}
-                        onChange={(value) => handleParamChange('publisher', value)}
-                    />
-
-                </div>
-
-                <Button
-                    text="Buscar"
-                    variant="pink"
-                    icon={<SerchIcon />}
-                    onClick={() => onApply(selectedParams)}
-                />
-            </div>
-
-            <div className={styles.filtersMenu}>
-                <button
-                    className={styles.filtersButton}
-                    onClick={() => setFiltersOpen(!filtersOpen)}
-                >
-                    <FadersIcon />
-                </button>
-
-                {filtersOpen && (
-                    <div className={styles.filtersPanel}>
-                        <h2 className={styles.filtersTitle}>Filtros</h2>
-
+                    
+                    <div className={styles.selectsContainer}>
                         <Select
                             placeholder="Gênero"
                             options={genres.map((genre) => genre.nome)}
@@ -126,14 +96,51 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
                             onChange={(value) => handleParamChange('publisher', value)}
                         />
 
-                        <Button
-                            text="Filtrar"
-                            variant="pink"
-                            icon={<FadersIcon />}
-                            onClick={handleApplyFilters}
-                        />
                     </div>
-                )}
+
+                    <Button
+                        text="Buscar"
+                        variant="pink"
+                        icon={<SerchIcon />}
+                        onClick={() => onApply(selectedParams)}
+                    />
+                </div>
+
+                <div className={styles.filtersMenu}>
+                    <button
+                        className={styles.filtersButton}
+                        onClick={() => setFiltersOpen(!filtersOpen)}
+                    >
+                        <FadersIcon />
+                    </button>
+
+                    {filtersOpen && (
+                        <div className={styles.filtersPanel}>
+                            <h2 className={styles.filtersTitle}>Filtros</h2>
+
+                            <Select
+                                placeholder="Gênero"
+                                options={genres.map((genre) => genre.nome)}
+                                value={selectedParams.genre}
+                                onChange={(value) => handleParamChange('genre', value)}
+                            />
+
+                            <Select
+                                placeholder="Editora"
+                                options={publishers.map((publisher) => publisher.nome)}
+                                value={selectedParams.publisher}
+                                onChange={(value) => handleParamChange('publisher', value)}
+                            />
+
+                            <Button
+                                text="Filtrar"
+                                variant="pink"
+                                icon={<FadersIcon />}
+                                onClick={handleApplyFilters}
+                            />
+                        </div>
+                    )}
+                </div>
             </div>
         </div>
     )
