@@ -1,19 +1,5 @@
-.overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-4);
-    background: rgb(0 0 0 / 50%);
-}
-
 .modal {
-    width: 100%;
     max-width: 74.5rem;
-    max-height: 100%;
-    overflow-y: auto;
     padding: var(--space-10) var(--space-16);
     border-radius: var(--radius-lg);
     background: white;
@@ -32,14 +18,26 @@
 }
 
 .cover {
+    position: relative;
     flex-shrink: 0;
     width: 15.5rem;
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--space-2);
     padding: var(--space-6);
     border-radius: var(--radius-lg);
-    background: var(--grey-300);
+    background: var(--grey-300) center / cover no-repeat;
+}
+
+.coverIcon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 3.375rem;
+    height: auto;
+    transform: translate(-50%, -50%);
 }
 
 .coverButton {
@@ -52,6 +50,7 @@
     background: var(--grey-400);
     color: white;
     font: var(--text-button-text);
+    white-space: nowrap;
     cursor: pointer;
 }
 
@@ -80,26 +79,13 @@
 }
 
 .inputs {
-    display: flex;
-    gap: var(--space-5);
-}
-
-.leftInputs {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-}
-
-.rightInputs {
-    width: 24rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: var(--space-4) var(--space-5);
 }
 
-.rightInputs > * {
-    min-width: 0;
+.span2 {
+    grid-column: span 2;
 }
 
 .field {
@@ -113,8 +99,60 @@
     color: var(--pink-600);
 }
 
+.error {
+    color: var(--orange-500);
+    font: var(--text-smaller-text);
+    margin: var(--space-1);
+}
+
 .actions {
     display: flex;
     justify-content: flex-end;
     gap: var(--space-4);
+}
+
+.editActions > :first-child {
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    .modal {
+        position: fixed;
+        inset: 0;
+        max-width: none;
+        border-radius: 0;
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .title {
+        margin-bottom: var(--space-6);
+    }
+
+    .form {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-6);
+    }
+
+    .cover {
+        width: 15rem;
+        aspect-ratio: 2 / 3;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .inputs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .editActions {
+        flex-wrap: wrap;
+    }
+
+    .editActions > :nth-child(2) {
+        order: 1;
+        width: 100%;
+    }
 }
