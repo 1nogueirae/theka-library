@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config = {
-    baseURL: 'https://thekaapitrainee1.pythonanywhere.com/',
+    baseURL: 'https://thekapitrainee.pythonanywhere.com/',
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
