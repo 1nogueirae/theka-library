@@ -1,10 +1,13 @@
 .button {
     font: var(--text-button-text);
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: fit-content;
     border-radius: var(--radius-full);
     gap: var(--space-2);
     padding: var(--space-3) var(--space-5);
+    cursor: pointer;
 }
 
 .buttonPrimary {
@@ -19,6 +22,32 @@
     border: 2px solid var(--orange-300);
 }
 
+.buttonPink {
+    background-color: var(--pink-600);
+    color: white;
+    border: none;
+}
+
+.buttonPinkSecondary {
+    background-color: transparent;
+    color: var(--pink-600);
+    border: 2px solid var(--pink-600);
+}
+
+.buttonDark {
+    background-color: var(--grey-600);
+    color: white;
+    border: none;
+}
+
+.buttonDark:hover {
+    background-color: var(--grey-700);
+}
+
+.buttonPinkSecondary:hover {
+    background-color: var(--pink-100);
+}
+
 .buttonPrimary:hover {
     background-color: var(--orange-500);
     cursor: pointer;
@@ -27,4 +56,14 @@
 .buttonSecondary:hover {
     background-color: var(--orange-100);
     cursor: pointer;
+}
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.icon svg {
+    width: 1.25em;
+    height: 1.25em;
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config = {
-    baseURL: 'https://thekaapitrainee1.pythonanywhere.com/',
+    baseURL: 'https://thekapitrainee.pythonanywhere.com/',
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
@@ -32,9 +32,16 @@ api.interceptors.response.use(
         if (isUnauthorized && !originalRequest.alreadyRetried) {
             originalRequest.alreadyRetried = true;
 
-            const refresh = localStorage.getItem('refresh');
-            const response = await publicApi.post('/auth/token/refresh/', { refresh: refresh });
-            localStorage.setItem('token', response.data.access);
+            try {
+                const refresh = localStorage.getItem('refresh');
+                const response = await publicApi.post('/auth/token/refresh/', { refresh: refresh });
+                localStorage.setItem('token', response.data.access);
+            } catch {
+                localStorage.removeItem('token');
+                localStorage.removeItem('refresh');
+                window.location.replace('/login');
+                return Promise.reject(error);
+            }
 
             return api(originalRequest);
         }

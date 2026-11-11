@@ -1,0 +1,131 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 7.7rem;
+}
+
+.loading {
+    font: var(--text-body-bold);
+    color: var(--grey-500);
+}
+
+.informations {
+    flex: 1 1 0;
+    text-align: left;
+    min-width: 30rem;
+    max-width: 33.25rem;
+}
+
+.title {
+    font: var(--text-h1);
+    color: var(--pink-600);
+    margin-bottom: 6rem;
+    font-size: 6.25rem;
+}
+
+.bookTitle {
+    font: var(--text-h2);
+    color: var(--grey-600);
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.bookText {
+    transition: opacity 0.15s;
+}
+
+.fading {
+    opacity: 0;
+}
+
+.bookInfo {
+    font: var(--text-h4);
+    margin: 0;
+    color: var(--grey-600);
+}
+
+.carousel ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 0.8rem;
+    height: 27rem;
+}
+
+.carousel li {
+    width: 3.75rem;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    transition: width 0.4s;
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+}
+
+.carousel li.active {
+    width: 16.375rem;
+    cursor: default;
+}
+
+.arrow {
+    color: var(--grey-100);
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 2rem;
+    height: 2rem;
+    transition: transform 0.4s;
+}
+
+.carousel li.active .arrow {
+    transform: rotate(-90deg);
+}
+
+@media (max-width: 1100px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 4rem;
+    }
+
+    .informations {
+        display: contents;
+    }
+
+    .title {
+        order: 1;
+        margin-bottom: 0;
+        font-size: 2.25rem;
+    }
+
+    .carousel {
+        order: 2;
+        margin-bottom: 1.5rem;
+    }
+
+    .bookText {
+        order: 3;
+    }
+
+    .carousel ul {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .carousel li,
+    .carousel li.active {
+        width: 100%;
+    }
+
+    .carousel li {
+        height: 3.75rem;
+        transition: height 0.4s;
+    }
+
+    .carousel li.active {
+        height: 22rem;
+    }
+}

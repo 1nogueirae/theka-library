@@ -1,0 +1,62 @@
+.toast {
+    position: fixed;
+    right: var(--space-6);
+    top: var(--space-6);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    max-width: 30rem;
+    padding: var(--space-3) var(--space-8) var(--space-3) var(--space-3);
+    border-radius: var(--radius-lg);
+    background: white;
+    box-shadow: 0 4px 8px rgb(72 0 29 / 25%);
+}
+
+.iconContainer {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: var(--radius-lg);
+    background: var(--pink-600);
+    color: white;
+}
+
+.iconContainer svg {
+    width: 3rem;
+    height: 3rem;
+}
+
+.message {
+    margin: 0;
+    font: var(--text-subtitle);
+    font-size: 1.25rem;
+    color: var(--pink-600);
+}
+
+@media (max-width: 768px) {
+    .toast {
+        left: var(--space-4);
+        right: var(--space-4);
+        top: var(--space-4);
+        gap: var(--space-4);
+        padding-right: var(--space-4);
+    }
+
+    .iconContainer {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .iconContainer svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .message {
+        font-size: 1rem;
+    }
+}

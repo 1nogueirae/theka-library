@@ -13,6 +13,7 @@ import styles from '@/components/structure/Footer.module.css'
 function Footer() {
     return (
         <div className={styles.container}>
+            <div className={styles.content}>
             <div className={styles.column}>
                 <img
                     className={styles.logo}
@@ -63,6 +64,7 @@ function Footer() {
                     <Question />
                     FAQ
                 </p>
+            </div>
             </div>
         </div>
     )

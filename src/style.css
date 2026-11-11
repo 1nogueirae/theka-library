@@ -1,5 +1,9 @@
 :root {
 
+    /* ----- Layout ----- */
+
+    --content-width: 80rem;
+
     /* ----- Typography ----- */
 
     --font-family-header: 'DM Sans', sans-serif;
@@ -83,9 +87,19 @@
 
     /* ----- Radius ----- */
 
+    --radius-card: 14px;
     --radius-lg: 30px;
     --radius-full: 9999px;
 
+}
+
+@media (max-width: 768px) {
+    :root {
+        --text-h1: 700 2.5rem/2.5rem var(--font-family-header);
+        --text-h2: 700 1.75rem/1.75rem var(--font-family-header);
+        --text-h3: 700 1.5rem var(--font-family-header);
+        --text-h4: 700 1rem var(--font-family-header);
+    }
 }
 
 *, ::before, ::after {

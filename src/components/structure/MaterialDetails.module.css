@@ -1,0 +1,91 @@
+.modal {
+    position: relative;
+    max-width: 37.5rem;
+    display: flex;
+    border-radius: var(--radius-lg);
+    background: var(--grey-100);
+}
+
+.cover {
+    width: 15rem;
+    flex-shrink: 0;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-12) var(--space-8) var(--space-6);
+}
+
+.closeButton {
+    position: absolute;
+    top: var(--space-5);
+    right: var(--space-6);
+    display: flex;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.closeButton svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.title {
+    margin: 0 0 var(--space-2);
+    font: var(--text-h3);
+    letter-spacing: var(--letter-spacing-header);
+    color: var(--grey-700);
+}
+
+.author {
+    font: var(--text-h4);
+    color: var(--grey-500);
+}
+
+.summary {
+    margin: var(--space-5) 0;
+    font: var(--text-body);
+    color: var(--grey-700);
+}
+
+.pages {
+    margin: 0 0 var(--space-4);
+    font: var(--text-body);
+    color: var(--grey-700);
+}
+
+.publisher {
+    font: var(--text-h4);
+    color: var(--grey-400);
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+    padding-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+    .modal {
+        flex-direction: column;
+        align-items: center;
+        padding-top: var(--space-6);
+    }
+
+    .cover {
+        width: 12rem;
+    }
+
+    .content {
+        width: 100%;
+        padding: var(--space-6) var(--space-5);
+    }
+}

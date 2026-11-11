@@ -5,6 +5,7 @@ interface TextInputProps extends ComponentProps<'input'> {
     icon?: ReactNode;
     label?: string;
     error?: string;
+    containerClassName?: string;
 }
 
 function TextInput({
@@ -13,10 +14,11 @@ function TextInput({
     label,
     error,
     placeholder = "Digite...",
+    containerClassName,
     ...rest
 }: TextInputProps) {
     return (
-        <div className={TextInputStyles.field}>
+        <div className={[TextInputStyles.field, containerClassName].filter(Boolean).join(' ')}>
             {label && <label htmlFor={id} className={TextInputStyles.label}>{label}</label>}
             <div className={TextInputStyles.textInputContainer} >
                 <input

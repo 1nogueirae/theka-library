@@ -5,7 +5,7 @@
 }
 
 .textInputContainer {
-    color: var(--orange-300);
+    color: var(--text-input-color, var(--orange-300));
     display: flex;
     width: 100%;
     border-radius: var(--radius-full);
@@ -33,17 +33,27 @@
     border: none;
     outline: none;
     font: var(--text-body);
-    color: var(--orange-300);
+    color: var(--text-input-color, var(--orange-300));
+}
+
+.multiline {
+    border-radius: var(--radius-card);
+    align-items: flex-start;
+}
+
+.multiline .input {
+    resize: none;
+    background: transparent;
 }
 
 .label {
-    font: var(--text-subtitle);
-    font-weight: 700;
-    color: var(--orange-300);
+    font: var(--text-input-label-font, var(--text-subtitle));
+    font-weight: var(--text-input-label-font-weight, 700);
+    color: var(--text-input-label-color, var(--orange-300));
 }
 
 .textInputContainer:focus-within {
-    border-color: var(--orange-500);
+    border-color: var(--text-input-focus-color, var(--orange-500));
 }
 
 .error {
