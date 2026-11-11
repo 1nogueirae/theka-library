@@ -2,17 +2,21 @@ export type Book = {
     id: number;
     titulo: string;
     numero_paginas: number;
-    capa: string;
+    capa: string | null;
     isbn: string;
     autor: string;
     ano_publicacao: number;
-    editora: number;
-    editora_nome: string;
+    editora: string;
     resumo: string;
-    genero: number;
-    genero_nome: string;
+    genero: string;
     criado_em: string;
     atualizado_em: string;
+}
+
+export type BookPayload = Omit<Book, 'id' | 'capa' | 'editora' | 'genero' | 'criado_em' | 'atualizado_em'> & {
+    capa: File | null;
+    editora: number;
+    genero: number;
 }
 
 export type PaginatedResponse<T> = {
