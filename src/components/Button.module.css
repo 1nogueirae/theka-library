@@ -34,6 +34,16 @@
     border: 2px solid var(--pink-600);
 }
 
+.buttonDark {
+    background-color: var(--grey-600);
+    color: white;
+    border: none;
+}
+
+.buttonDark:hover {
+    background-color: var(--grey-700);
+}
+
 .buttonPinkSecondary:hover {
     background-color: var(--pink-100);
 }
