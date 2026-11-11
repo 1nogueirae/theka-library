@@ -7,6 +7,11 @@
     margin-bottom: 7.7rem;
 }
 
+.loading {
+    font: var(--text-body-bold);
+    color: var(--grey-500);
+}
+
 .informations {
     flex: 1 1 0;
     text-align: left;
@@ -60,12 +65,6 @@
     cursor: pointer;
 }
 
-.carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
 .carousel li.active {
     width: 16.375rem;
     cursor: default;
@@ -85,7 +84,7 @@
     transform: rotate(-90deg);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .container {
         flex-direction: column;
         align-items: stretch;

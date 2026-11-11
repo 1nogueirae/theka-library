@@ -6,7 +6,14 @@ import { useState, useEffect } from 'react';
 import { booksService } from '@/services/books';
 import type { Book } from '@/types/books.types';
 
-function Carousel() {
+import BookCover from '@/components/BookCover';
+
+type CarouselProps = {
+    reload: number;
+    onError: (message: string) => void;
+};
+
+function Carousel({ reload, onError }: CarouselProps) {
 
     const [books, setBooks] = useState<Book[]>([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -27,23 +34,27 @@ function Carousel() {
     useEffect(() => {
         const getBooks = async () => {
             try {
-                setIsLoading(true);
                 const books = await booksService.news();
                 setBooks(books);
+                setCurrentIndex(0);
+                setShownIndex(0);
                 setIsLoading(false);
             } catch (error) {
                 console.error('Error fetching books:', error);
+                setBooks([]);
+                setIsLoading(false);
+                onError('Não foi possível carregar as novidades.');
             }
         }
         getBooks();
-    }, [])
+    }, [reload, onError])
 
     return (
         <div className={styles.container}>
 
             {isLoading ? (
-                <div className={styles.loading}>Loading...</div>
-            ) : (
+                <div className={styles.loading}>Carregando novidades...</div>
+            ) : books.length > 0 && (
                 <>
                     <div className={styles.informations}>
                         <div className={styles.title}>
@@ -70,7 +81,7 @@ function Carousel() {
                                     onClick={() => selectBook(index)}
                                 >
                                     <Arrow className={styles.arrow} />
-                                    <img
+                                    <BookCover
                                         src={book.capa}
                                         alt={book.titulo}
                                     />
