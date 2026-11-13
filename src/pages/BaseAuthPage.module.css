@@ -1,7 +1,5 @@
 .baseAuthPageContainer {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
     height: 100dvh;
     background-color: var(--orange-500);
 }
@@ -64,7 +62,6 @@
 
     .mascote {
         height: 100%;
-        width: auto;
         margin-bottom: 0;
     }
 

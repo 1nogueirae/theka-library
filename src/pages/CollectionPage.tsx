@@ -21,7 +21,7 @@ function CollectionPage() {
     const [hasCollectionError, setHasCollectionError] = useState(false);
 
     return (
-        <div className={styles.container}>
+        <div className={`container ${styles.container}`}>
             <Carousel reload={reload} onError={setErrorMessage} />
 
             {!hasCollectionError && <CollectionFilter onApply={setSearchParams} />}

@@ -28,7 +28,7 @@
     justify-content: space-between;
     width: calc(100% - 2.5rem);
     height: calc(3rem - 4px);
-    margin: 0 1.25rem;
+    margin: 0 var(--space-5);
     padding: 0;
     background: none;
     border: none;
@@ -71,7 +71,7 @@
 }
 
 .option {
-    padding: 0.5rem 1.25rem;
+    padding: var(--space-2) var(--space-5);
     font-size: 1rem;
     cursor: pointer;
 }

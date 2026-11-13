@@ -12,6 +12,7 @@ import { booksService } from '@/services/books';
 import type { Book, BookPayload } from '@/types/books.types';
 
 import styles from '@/components/forms/MaterialForm.module.css'
+import TextInputStyles from '@/components/TextInput.module.css';
 
 import Modal from '@/components/Modal';
 import ConfirmModal from '@/components/ConfirmModal';
@@ -207,7 +208,7 @@ function MaterialForm({ book, onClose, onSave }: MaterialFormProps) {
                                 containerClassName={styles.span2}
                             />
 
-                            <div className={`${styles.field} ${styles.span2}`}>
+                            <div className={`${TextInputStyles.field} ${styles.span2}`}>
                                 <span className={styles.label}>Gênero</span>
                                 <Select
                                     placeholder="Selecionar"
@@ -215,9 +216,9 @@ function MaterialForm({ book, onClose, onSave }: MaterialFormProps) {
                                     value={genres.find((g) => g.id === genre)?.nome ?? ''}
                                     onChange={(nome) => setGenre(genres.find((g) => g.nome === nome)?.id ?? null)}
                                 />
-                                {formState.isSubmitted && !genre && <p className={styles.error}>O gênero é obrigatório</p>}
+                                {formState.isSubmitted && !genre && <p className={TextInputStyles.error}>O gênero é obrigatório</p>}
                             </div>
-                            <div className={`${styles.field} ${styles.span2}`}>
+                            <div className={`${TextInputStyles.field} ${styles.span2}`}>
                                 <span className={styles.label}>Editora</span>
                                 <Select
                                     placeholder="Selecionar"
@@ -225,7 +226,7 @@ function MaterialForm({ book, onClose, onSave }: MaterialFormProps) {
                                     value={publishers.find((p) => p.id === publisher)?.nome ?? ''}
                                     onChange={(nome) => setPublisher(publishers.find((p) => p.nome === nome)?.id ?? null)}
                                 />
-                                {formState.isSubmitted && !publisher && <p className={styles.error}>A editora é obrigatória</p>}
+                                {formState.isSubmitted && !publisher && <p className={TextInputStyles.error}>A editora é obrigatória</p>}
                             </div>
                         </div>
 
