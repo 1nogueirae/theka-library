@@ -1,0 +1,78 @@
+.container {
+    margin-bottom: 5rem;
+}
+
+.title {
+    margin: 0 0 2.5rem;
+    color: var(--pink-600);
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+}
+
+.orange {
+    background-color: var(--orange-300);
+}
+
+.olive {
+    background-color: var(--olive-400);
+}
+
+.magenta {
+    background-color: #d333a6;
+}
+
+.green {
+    background-color: #025943;
+}
+
+.photo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.name {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    padding: 0.125rem 0.625rem;
+    border-radius: var(--radius-full);
+    background-color: rgba(27, 27, 27, 0.7);
+    color: white;
+    font: var(--text-link-text);
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin-bottom: 3rem;
+    }
+
+    .title {
+        margin-bottom: 1.5rem;
+    }
+
+    .list {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 2rem;
+    }
+
+    .card {
+        width: 13rem;
+    }
+}

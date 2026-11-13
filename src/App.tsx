@@ -7,6 +7,7 @@ import ResetPasswordForm from '@/components/forms/ResetPasswordForm'
 import SignUpForm from '@/components/forms/SignUpForm'
 import CollectionPage from './pages/CollectionPage';
 import BaseAppPage from './pages/BaseAppPage';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
 
       <Route element={<BaseAppPage />}>
         <Route path="collection" element={<CollectionPage />} />
+        <Route path="about" element={<AboutPage />} />
       </Route >
 
     </Routes>
