@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const config = {
-    baseURL: 'https://thekapitrainee.pythonanywhere.com/',
+    baseURL: import.meta.env.VITE_API_BASE_URL,
     timeout: 10000,
     headers: {
         'Content-Type': 'application/json',
