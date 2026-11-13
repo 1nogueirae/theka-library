@@ -12,7 +12,7 @@ function AboutPage() {
             <AboutBanner />
             <Topics />
 
-            <div className={styles.content}>
+            <div className="container">
                 <OurHistory />
                 <OurValues />
                 <OurTeam />
