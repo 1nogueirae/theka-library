@@ -19,11 +19,11 @@
 
 .text {
     max-width: 27rem;
-    font: 400 1.125rem/140% var(--font-family-text);
+    font: var(--text-body-large);
 }
 
 .text p {
-    margin: 0 0 1.25rem;
+    margin: 0 0 var(--space-5);
 }
 
 .text p:last-child {
@@ -44,12 +44,12 @@
 @media (max-width: 768px) {
     .container {
         min-height: 0;
-        margin-bottom: 3rem;
-        padding: 1.5rem 1rem 0;
+        margin-bottom: var(--space-12);
+        padding: var(--space-6) var(--space-4) 0;
     }
 
     .title {
-        margin-bottom: 1.5rem;
+        margin-bottom: var(--space-6);
     }
 
     .shapeDesktop {
@@ -59,6 +59,6 @@
     .shapeMobile {
         display: block;
         width: 100%;
-        margin-top: 1.5rem;
+        margin-top: var(--space-6);
     }
 }
