@@ -1,10 +1,10 @@
 .booksList {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 1rem;
+    gap: var(--space-4);
     list-style: none;
     padding: 0;
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--space-10);
 }
 
 .statusBox {
@@ -14,7 +14,7 @@
     justify-content: center;
     gap: var(--space-4);
     min-height: 20.375rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: var(--space-10);
     padding: 0 var(--space-4);
     text-align: center;
     font: var(--text-body-bold);
@@ -97,7 +97,7 @@
     background-color: var(--pink-600);
     width: fit-content;
     padding: 0.7rem 1.414rem;
-    border-radius: 6.25rem;
+    border-radius: var(--radius-full);
     color: white;
     position: absolute;
     top: 15.25rem;
@@ -123,7 +123,7 @@
 
 .buttonPlus:hover .buttonPlusLabel {
     width: 8rem;
-    margin-right: 1rem;
+    margin-right: var(--space-4);
 }
 
 .buttonPlus svg {
