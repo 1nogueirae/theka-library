@@ -50,12 +50,10 @@
 
 .buttonPrimary:hover {
     background-color: var(--orange-500);
-    cursor: pointer;
 }
 
 .buttonSecondary:hover {
     background-color: var(--orange-100);
-    cursor: pointer;
 }
 
 .icon {
