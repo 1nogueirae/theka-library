@@ -3,28 +3,31 @@
     align-items: center;
     justify-content: center;
     height: fit-content;
-    gap: 3rem;
+    gap: var(--space-12);
     margin-top: 3.5rem;
     margin-bottom: 5.5rem;
     margin-inline: 3.5rem;
     position: sticky;
     top: 3.5rem;
     z-index: 100;
+
+    --navbar-background: linear-gradient(to bottom right, var(--grey-200) 0%, white 60%);
+    --navbar-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .logo,
 .tabsContainer {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--navbar-shadow);
 }
 
 .logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom right, var(--grey-200) 0%, white 60%);
+    background: var(--navbar-background);
     width: 4.5rem;
     flex-shrink: 0;
-    border-radius: 6.25rem;
+    border-radius: var(--radius-full);
     padding: 0.1rem;
 }
 
@@ -36,9 +39,8 @@
 .tabsContainer {
     display: flex;
     align-items: center;
-    background: linear-gradient(to bottom right, var(--grey-200) 0%, white 60%);
-    background-color: var(--grey-100);
-    border-radius: 6.25rem;
+    background: var(--navbar-background);
+    border-radius: var(--radius-full);
     flex-direction: row;
     gap: 6.25rem;
     padding-left: 2.563rem;
@@ -74,10 +76,10 @@
 
 @media (max-width: 768px) {
     .container {
-        gap: 0.75rem;
-        margin-top: 1.5rem;
-        margin-bottom: 2rem;
-        margin-inline: 1rem;
+        gap: var(--space-3);
+        margin-top: var(--space-6);
+        margin-bottom: var(--space-8);
+        margin-inline: var(--space-4);
         top: 1.5rem;
     }
 
@@ -89,7 +91,7 @@
         position: relative;
         flex: 1;
         justify-content: center;
-        padding-inline: 1rem;
+        padding-inline: var(--space-4);
     }
 
     .tabs {
@@ -113,14 +115,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: var(--space-4);
         position: absolute;
         top: calc(100% + 0.5rem);
         left: 0;
         right: 0;
-        padding: 1.25rem 1rem;
-        background: linear-gradient(to bottom right, var(--grey-200) 0%, white 60%);
+        padding: var(--space-5) var(--space-4);
+        background: var(--navbar-background);
         border-radius: var(--radius-lg);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: var(--navbar-shadow);
     }
 }
