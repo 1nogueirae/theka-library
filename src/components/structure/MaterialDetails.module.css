@@ -8,8 +8,10 @@
 
 .cover {
     width: 15rem;
+    height: auto;
+    min-height: 22.5rem;
     flex-shrink: 0;
-    aspect-ratio: 2 / 3;
+    align-self: stretch;
     object-fit: cover;
     border-radius: var(--radius-lg);
 }
@@ -82,6 +84,9 @@
 
     .cover {
         width: 12rem;
+        min-height: 0;
+        align-self: center;
+        aspect-ratio: 2 / 3;
     }
 
     .content {
