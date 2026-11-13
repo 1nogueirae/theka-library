@@ -1,9 +1,9 @@
 .container {
     position: relative;
     margin-top: -13.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: var(--space-12);
     padding-top: 10rem;
-    padding-bottom: 3rem;
+    padding-bottom: var(--space-12);
     background-color: var(--pink-500);
     border-bottom-left-radius: var(--radius-card);
     border-bottom-right-radius: var(--radius-card);
@@ -22,9 +22,6 @@
     justify-content: flex-end;
     align-items: center;
     min-height: 32rem;
-    max-width: var(--content-width);
-    margin: 0 auto;
-    padding-inline: 1rem;
 }
 
 .informations {
@@ -37,8 +34,8 @@
 }
 
 .text {
-    margin: 2rem 0 0;
-    font: 400 1.125rem/140% var(--font-family-text);
+    margin: var(--space-8) 0 0;
+    font: var(--text-body-large);
     color: white;
 }
 
@@ -46,7 +43,7 @@
     .container {
         margin-top: -7rem;
         padding-top: 8.5rem;
-        padding-bottom: 2.5rem;
+        padding-bottom: var(--space-10);
     }
 
     .mascote {
@@ -58,7 +55,7 @@
     .content {
         display: block;
         min-height: 0;
-        margin-top: 2rem;
+        margin-top: var(--space-8);
     }
 
     .informations {
@@ -70,6 +67,6 @@
     }
 
     .text {
-        margin-top: 1rem;
+        margin-top: var(--space-4);
     }
 }

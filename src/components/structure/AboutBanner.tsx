@@ -8,7 +8,7 @@ function AboutBanner() {
         <section className={styles.container}>
             <img className={styles.mascote} src={MascoteBanner} alt="" />
 
-            <div className={styles.content}>
+            <div className={`container ${styles.content}`}>
                 <div className={styles.informations}>
                     <img className={styles.logo} src={LogotipoAmarelo} alt="Theka" />
                     <p className={styles.text}>
