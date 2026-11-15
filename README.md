@@ -1,6 +1,8 @@
 # Theka Library
 > Front-end da Theka, uma biblioteca comunitária com acervo de livros, desenvolvido no desafio de front-end do Trainee EJECT.
 
+🔗 **Deploy:** [theka-library-eight.vercel.app](https://theka-library-eight.vercel.app)
+
 ## 📋 Sobre o Projeto
 
 A Theka é uma biblioteca comunitária. Este projeto é a aplicação web dela: o usuário cria a conta, entra e navega pelo acervo, podendo buscar, filtrar, cadastrar, editar e remover livros. Também há uma página institucional "Sobre nós".
@@ -15,6 +17,7 @@ Os dados vêm da API da Theka, consumida com Axios e autenticada por JWT.
   - Renovação automática do token de acesso quando ele expira
   - Logout pelo ícone de usuário da Navbar, com confirmação
   - Telas de recuperação e redefinição de senha (apenas interface)
+  - Acervo protegido: sem login, `/collection` redireciona para `/login`
 - **Acervo**
   - Carrossel de novidades
   - Listagem paginada de livros
@@ -25,6 +28,7 @@ Os dados vêm da API da Theka, consumida com Axios e autenticada por JWT.
 - **Sobre nós**
   - Página institucional estática (história, valores, equipe e tópicos)
 - **Layout responsivo**, com menu recolhível na Navbar em telas pequenas
+- **Página não encontrada** para rotas inexistentes
 
 ### Rotas
 
@@ -34,8 +38,9 @@ Os dados vêm da API da Theka, consumida com Axios e autenticada por JWT.
 | `/signup` | Cadastro |
 | `/recoverpassword` | Recuperar senha |
 | `/resetpassword` | Redefinir senha |
-| `/collection` | Acervo |
+| `/collection` | Acervo (exige login) |
 | `/about` | Sobre nós |
+| qualquer outra | Página não encontrada |
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -77,6 +82,14 @@ npm run lint    # verifica o código com ESLint
 ```
 
 > O `npm install` também configura o Husky automaticamente (script `prepare`), ativando o hook de commits.
+
+## ☁️ Deploy
+
+O projeto está publicado na [Vercel](https://vercel.com), ligado ao repositório do GitHub.
+
+- **Framework:** Vite, com build `npm run build` e saída em `dist/`
+- **Variável de ambiente:** `VITE_API_BASE_URL`, configurada no painel da Vercel. Como o Vite embute a variável no build, um redeploy é necessário depois de alterá-la.
+- **Rotas do React Router:** o `vercel.json` redireciona todas as rotas para o `index.html`, para que acessar ou recarregar uma rota como `/collection` não resulte em 404.
 
 ## 📝 Padrão de Commits
 
@@ -123,6 +136,7 @@ theka-library
 ├── tsconfig.app.json      # TypeScript do código da aplicação (src/)
 ├── tsconfig.node.json     # TypeScript dos arquivos de configuração (vite.config.ts)
 ├── vite.config.ts         # Configuração do Vite
+├── vercel.json            # Configuração do deploy na Vercel (rewrite das rotas)
 ├── .gitignore             # Arquivos ignorados pelo Git
 ├── package.json           # Dependências e scripts
 ├── package-lock.json      # Versões exatas das dependências instaladas
