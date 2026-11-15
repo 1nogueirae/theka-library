@@ -9,6 +9,7 @@ import CollectionPage from './pages/CollectionPage';
 import BaseAppPage from './pages/BaseAppPage';
 import AboutPage from './pages/AboutPage';
 import ProtectedRoute from '@/components/ProtectedRoute';
+import NotFoundPage from '@/pages/NotFoundPage';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="about" element={<AboutPage />} />
       </Route >
 
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   )
 }
