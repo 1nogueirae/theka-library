@@ -8,6 +8,7 @@ import SignUpForm from '@/components/forms/SignUpForm'
 import CollectionPage from './pages/CollectionPage';
 import BaseAppPage from './pages/BaseAppPage';
 import AboutPage from './pages/AboutPage';
+import ProtectedRoute from '@/components/ProtectedRoute';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
       </Route >
 
       <Route element={<BaseAppPage />}>
-        <Route path="collection" element={<CollectionPage />} />
+        <Route path="collection" element={<ProtectedRoute><CollectionPage /></ProtectedRoute>} />
         <Route path="about" element={<AboutPage />} />
       </Route >
 
