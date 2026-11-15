@@ -87,6 +87,7 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
                             options={genres.map((genre) => genre.nome)}
                             value={selectedParams.genre}
                             onChange={(value) => handleParamChange('genre', value)}
+                            allOption="Todos"
                         />
 
                         <Select
@@ -94,6 +95,7 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
                             options={publishers.map((publisher) => publisher.nome)}
                             value={selectedParams.publisher}
                             onChange={(value) => handleParamChange('publisher', value)}
+                            allOption="Todos"
                         />
 
                     </div>
@@ -123,6 +125,7 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
                                 options={genres.map((genre) => genre.nome)}
                                 value={selectedParams.genre}
                                 onChange={(value) => handleParamChange('genre', value)}
+                                allOption="Todos"
                             />
 
                             <Select
@@ -130,6 +133,7 @@ function CollectionFilter({ onApply }: CollectionFilterProps) {
                                 options={publishers.map((publisher) => publisher.nome)}
                                 value={selectedParams.publisher}
                                 onChange={(value) => handleParamChange('publisher', value)}
+                                allOption="Todos"
                             />
 
                             <Button

@@ -7,6 +7,7 @@ interface SelectProps {
     options: string[];
     value: string;
     onChange: (value: string) => void;
+    allOption?: string;
 }
 
 function Select({
@@ -14,6 +15,7 @@ function Select({
     options,
     value,
     onChange,
+    allOption,
 }: SelectProps) {
     const [open, setOpen] = useState(false);
 
@@ -35,6 +37,14 @@ function Select({
                 </button>
 
                 <ul className={SelectStyles.options}>
+                    {allOption && (
+                        <li
+                            className={`${SelectStyles.option} ${!value ? SelectStyles.selected : ''}`}
+                            onClick={() => handleSelect('')}
+                        >
+                            {allOption}
+                        </li>
+                    )}
                     {options.map((option) => (
                         <li
                             key={option}

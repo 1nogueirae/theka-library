@@ -1,15 +1,28 @@
 import LogotipoIcone from '@/assets/icons/LogotipoIcone.svg?react'
 import UserCircle from '@/assets/icons/UserCircle.svg?react'
+import SignOut from '@/assets/icons/SignOut.svg?react'
 import LogotipoCompleto from '@/assets/images/LogotipoCompleto-Cinza.svg'
 
 import styles from '@/components/structure/Navbar.module.css'
 
+import ConfirmModal from '@/components/ConfirmModal'
+
+import { authService } from '@/services/auth'
+
 import { useState } from 'react';
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 
 function Navbar() {
 
+    const navigate = useNavigate();
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isLogoutOpen, setIsLogoutOpen] = useState(false);
+
+    function handleLogout() {
+        authService.logout();
+        navigate('/login', { replace: true });
+    }
 
     return (
 
@@ -47,11 +60,30 @@ function Navbar() {
                         Sobre nós
                     </NavLink>
 
-                    <UserCircle />
+                    <button
+                        className={styles.userButton}
+                        onClick={() => {
+                            setIsMenuOpen(false);
+                            setIsLogoutOpen(true);
+                        }}
+                        aria-label="Sair da conta"
+                    >
+                        <UserCircle />
+                    </button>
 
                 </div>
 
             </div>
+
+            {isLogoutOpen && (
+                <ConfirmModal
+                    message="Deseja sair da sua conta?"
+                    confirmText="Sair"
+                    confirmIcon={<SignOut />}
+                    onConfirm={handleLogout}
+                    onCancel={() => setIsLogoutOpen(false)}
+                />
+            )}
 
         </div>
 

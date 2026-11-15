@@ -13,5 +13,9 @@ export const authService = {
         const response = await publicApi.post<LoginResponse>('/auth/token/', credentials);
 
         return response.data;
+    },
+    logout: () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('refresh');
     }
 };  

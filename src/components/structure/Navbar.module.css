@@ -70,6 +70,19 @@
     display: contents;
 }
 
+.userButton {
+    display: flex;
+    background: none;
+    border: 0;
+    padding: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+.userButton:hover {
+    color: var(--grey-600);
+}
+
 .wordmark {
     display: none;
 }

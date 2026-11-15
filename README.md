@@ -1,9 +1,41 @@
 # Theka Library
-> [DESCRIÇÃO SIMPLES]
+> Front-end da Theka, uma biblioteca comunitária com acervo de livros, desenvolvido no desafio de front-end do Trainee EJECT.
 
 ## 📋 Sobre o Projeto
 
-[descrição detalhada do projeto]
+A Theka é uma biblioteca comunitária. Este projeto é a aplicação web dela: o usuário cria a conta, entra e navega pelo acervo, podendo buscar, filtrar, cadastrar, editar e remover livros. Também há uma página institucional "Sobre nós".
+
+Os dados vêm da API da Theka, consumida com Axios e autenticada por JWT.
+
+### Funcionalidades
+
+- **Autenticação**
+  - Cadastro de usuário
+  - Login com JWT (token de acesso e de refresh salvos no `localStorage`)
+  - Renovação automática do token de acesso quando ele expira
+  - Logout pelo ícone de usuário da Navbar, com confirmação
+  - Telas de recuperação e redefinição de senha (apenas interface)
+- **Acervo**
+  - Carrossel de novidades
+  - Listagem paginada de livros
+  - Busca por título
+  - Filtro por gênero e editora, com a opção "Todos" para limpar cada filtro
+  - Detalhes do livro em modal
+  - Cadastro, edição e remoção de livros, com upload de capa
+- **Sobre nós**
+  - Página institucional estática (história, valores, equipe e tópicos)
+- **Layout responsivo**, com menu recolhível na Navbar em telas pequenas
+
+### Rotas
+
+| Rota | Tela |
+| --- | --- |
+| `/login` | Login (a rota `/` redireciona para cá) |
+| `/signup` | Cadastro |
+| `/recoverpassword` | Recuperar senha |
+| `/resetpassword` | Redefinir senha |
+| `/collection` | Acervo |
+| `/about` | Sobre nós |
 
 ## 🚀 Tecnologias Utilizadas
 
@@ -13,13 +45,28 @@
 - **TypeScript (TSX)** - Linguagem de Programação
 - **CSS Modules** - Estilos isolados por componente, com variáveis globais do Style Guide em `style.css`
 
+### Bibliotecas
+
+- **React Router** - Navegação entre as telas
+- **Axios** - Requisições à API, com interceptors para o token JWT
+- **React Hook Form** - Formulários e validação
+
 ### Utilitários
 
 - **Vite** - Servidor de desenvolvimento e build
+- **vite-plugin-svgr** - Importa SVGs como componentes React (`icone.svg?react`)
 - **ESLint** - Verificação e padronização do código
 - **Husky** - Git hooks versionados no projeto (validação das mensagens de commit)
 
 ## ▶️ Como Rodar o Projeto
+
+Crie um arquivo `.env` na raiz com o endereço da API:
+
+```bash
+VITE_API_BASE_URL=https://thekapitrainee.pythonanywhere.com/
+```
+
+Depois:
 
 ```bash
 npm install     # instala as dependências
@@ -59,13 +106,17 @@ theka-library
 │   ├── assets/            # Arquivos de mídia
 │   │   ├── icons/         # Ícones em SVG
 │   │   └── images/        # Imagens (logos, ilustrações, fotos)
-│   ├── components/        # Componentes reutilizáveis (botões, cards, navbar)
-│   ├── hooks/             # Hooks personalizados (useAuth, useLivros)
-│   ├── pages/             # Páginas (telas) do site
-│   ├── services/          # Comunicação com o back-end (fetch/axios)
+│   ├── components/        # Componentes reutilizáveis (botões, inputs, modais)
+│   │   ├── forms/         # Formulários (login, cadastro, livro)
+│   │   └── structure/     # Blocos das páginas (navbar, acervo, filtros, footer)
+│   ├── pages/             # Páginas (telas) e layouts base
+│   ├── services/          # Comunicação com a API (axios)
+│   ├── types/             # Tipos TypeScript dos dados da API
+│   ├── utils/             # Funções auxiliares
 │   ├── App.tsx            # Componente principal da aplicação
 │   ├── main.tsx           # Ponto de entrada do React
 │   └── style.css          # Estilos globais (variáveis do Style Guide)
+├── .env                   # Endereço da API (não versionado)
 ├── index.html             # Página HTML base (contém a div #root e carrega as fontes)
 ├── eslint.config.js       # Configuração do ESLint
 ├── tsconfig.json          # Configuração base do TypeScript (referencia os dois abaixo)
@@ -77,8 +128,6 @@ theka-library
 ├── package-lock.json      # Versões exatas das dependências instaladas
 └── README.md              # Documentação do projeto
 ```
-
-Cada pasta de desenvolvimento tem um documento `.md` com o nome dela explicando para que serve e o que colocar ali (ex.: `src/components/components.md`).
 
 ## 👤 Desenvolvedor
 
